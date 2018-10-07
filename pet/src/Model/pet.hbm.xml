@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping package="Model">
+<class name="BeanOperator" table="beanoperator">
+	<id name="operator_id" type="string">
+		<column name="user_id"/>
+		<generator class="assigned"/>
+	</id>
+	<property name="operator_name" type="string" column="user_name"/>
+	<property name="operator_pwd" type="string" column="pwd"/>
+	<property name="level" type="string" column="level"/>
+</class>
+
+<class name="BeanCustomer" table="beancustomer">
+	<id name="customer_id" type="int">
+		<column name="customer_id"/>
+		<generator class="assigned"/>
+	</id>
+	<property name="customer_number" type="string" column="customer_number"/>
+	<property name="customer_name" type="string" column="customer_name"/>
+	<property name="mail" type="string" column="mail"/>
+	<property name="phone" type="string" column="phone"/>
+	<property name="other_contact" type="string" column="other_contact"/>
+	<property name="customer_pwd" type="string" column="pwd"/>
+	<property name="address" type="string" column="address"/>
+	<property name="money" type="double" column="money"/>
+</class>
+
+<class name="BeanPet" table="beanpet">
+	<id name="pet_id" type="int">
+		<column name="pet_id"/>
+		<generator class="assigned"/>
+	</id>
+	<property name="pet_name" type="string" column="pet_name"/>
+	<property name="pet_love_name" type="string" column="pet_love_name"/>
+	<property name="pet_image" type="string" column="pet_image"/>
+	<property name="owner_id" type="int" column="pet_owner_id"/>
+</class>	
+
+<class name="BeanGoodsType" table="beangoodstype">
+	<id name="type_id" type="string">
+		<column name="type_id"/>
+		<generator class="assigned"/>
+	</id>
+	<property name="type_name" type="string" column="type_name"/>
+	<property name="type_descripe" type="string" column="type_descripe"/>
+</class>
+
+<class name="BeanGoods" table="beangoods">
+	<id name="goods_id" type="string">
+		<column name="goods_id"/>
+		<generator class="assigned"/>
+	</id>
+	<property name="goods_name" type="string" column="goods_name"/>
+	<property name="gooos_type_id" type="string" column="gooos_type_id"/>
+	<property name="goods_brand" type="string" column="goods_brand"/>
+	<property name="goods_price" type="double" column="goods_price"/>
+	<property name="goods_barcode" type="string" column="goods_barcode"/>
+</class>
+
+<class name="BeanServeType" table="beanservetype">
+	<id name="servetype_id" type="string">
+		<column name="servetype_id"/>
+		<generator class="assigned"/>
+	</id>
+	<property name="servetype_name" type="string" column="servetype_name"/>
+	<property name="servetype_descripe" type="string" column="servetype_descripe"/>
+</class>
+
+
+<class name="BeanServe" table="beanserve">
+	<id name="serve_id" type="string">
+		<column name="serve_id"/>
+		<generator class="assigned"/>
+	</id>
+	<property name="serve_name" type="string" column="serve_name"/>
+	<property name="serve_type_id" type="string" column="serve_type_id"/>
+	<property name="serve_price" type="double" column="serve_price"/>
+</class>
+
+<class name="BeanAdvanceorder" table="beanadvanceorder">
+	<id name="advance_id" type="int">
+		<column name="advance_id"/>
+		<generator class="assigned"/>
+	</id>
+	<property name="advance_serve_id" type="string" column="advance_serve_id"/>
+	<property name="customer_id" type="int" column="customer_id"/>
+	<property name="pet_id" type="int" column="pet_id"/>
+	<property name="advance_time" type="date" column="advance_time"/>
+	<property name="advance_real_time" type="date" column="advance_real_time"/>
+	<property name="advance_order_describe" type="string" column="advance_order_describe"/>
+</class>
+
+<class name="BeanOrder" table="beanorder">
+	<id name="order_id" type="int">
+		<column name="order_id"/>
+		<generator class="assigned"/>
+	</id>
+	<property name="goods_id" type="string" column="goods_id"/>
+	<property name="goods_type_name" type="string" column="goods_type_name"/>
+	<property name="goods_name" type="string" column="goods_name"/>
+	<property name="customer_id" type="int" column="customer_id"/>
+	<property name="order_count" type="int" column="order_count"/>
+	<property name="order_price" type="double" column="order_price"/>
+	<property name="order_sum" type="double" column="order_sum"/>
+	<property name="order_state" type="string" column="order_state"/>
+</class>
+</hibernate-mapping>	
